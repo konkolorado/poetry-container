@@ -2,16 +2,14 @@ name: Docker Image CI
 
 on:
   push:
-    branches: [ master ]
+    branches-ignore: [ master ]
   pull_request:
     branches: [ master ]
   schedule:
     - cron:  '59 23 * * *'
 
 jobs:
-
   build:
-
     runs-on: ubuntu-latest
 
     steps:
