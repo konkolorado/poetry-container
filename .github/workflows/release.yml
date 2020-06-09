@@ -12,6 +12,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Checkout tools repo
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 1
+
       - name: Create a release
         if: github.event.pull_request.merged == true
-        run: echo "Creating a release..."
+        run: echo "Creating a release..."; cat README.md
